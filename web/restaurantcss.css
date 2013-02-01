@@ -1,0 +1,33 @@
+/* 
+    Document   : restaurantcss
+    Created on : Jan 31, 2013, 11:48:36 PM
+    Author     : Patrick Urban
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+td{
+    font-family: verdana;
+    font-size: 14px;
+}
+
+h3{
+    font-family: Arial, helvetica, sans-serif;
+    color: #990033;
+    margin-bottom: 3px;
+    /*text-align: center;*/
+}
+
+h2{
+    font-family: Arial, helvetica, sans-serif;
+    color: blue;
+    /*text-align: center;*/
+}
+
+h1{
+    font-family: Arial, helvetica, sans-serif;
+}
