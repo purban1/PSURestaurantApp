@@ -24,6 +24,14 @@ public class MealResult {
             bill.put("meal", "Pizza");
             bill.put("mealprice", "10.00");
         }
+        else if (meal.equals("burrito")){
+            bill.put("meal", "Burrito");
+            bill.put("mealprice", "9.80");
+        }
+        else if (meal.equals("stirfry")){
+            bill.put("meal", "Stir Fry dish");
+            bill.put("mealprice", "13.25");
+        }
         
         if (beverage.equals("milk")){
             bill.put("beverage", "Milk");
@@ -36,6 +44,10 @@ public class MealResult {
         else if (beverage.equals("beer")){
             bill.put("beverage", "Beer");
             bill.put("beverageprice", "5.50");
+        }
+        else if (beverage.equals("margarita")){
+            bill.put("beverage", "Strawberry Margarita");
+            bill.put("beverageprice", "7.75");
         }
         
         

@@ -23,6 +23,8 @@
                 <option value="steak">Steak</option>
                 <option value="cheeseburger">Cheeseburger</option>
                 <option value="pizza">Pizza</option>
+                <option value="burrito">Burrito</option>
+                <option value="stirfry">Stir Fry</option>
             </select>
             <p>Choose your beverage:</p>
             <select id="beverage" name="beverage">
@@ -30,6 +32,7 @@
                 <option value="milk">Milk</option>
                 <option value="soda">Soda</option>
                 <option value="beer">Beer</option>
+                <option value="margarita">Strawberry Margarita</option>
             </select>
             <p></p>
             <input type="submit" value="Let's Eat">
@@ -38,6 +41,7 @@
         <script>
             function validate(){
                 var choice=document.forms["choices"]["mainmeal"].value;
+                var choice2=document.forms["choices"]["beverage"].value;
                 if (choice=="default"){
                     alert("You must make a selection from all menus to continue.")
                     return false;
