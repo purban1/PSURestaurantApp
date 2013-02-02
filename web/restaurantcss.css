@@ -15,18 +15,37 @@ html
     margin-left: 50px;
 }
 
+table
+{
+    border-collapse: collapse;
+}
+
 td{
     font-family: verdana;
     font-size: 14px;
-    padding-bottom: 9px;
+    padding-top: 9px;
+}
+
+td.lastrow{
+    border-top: 2px dashed black;
+    text-align: right;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+tr.tipline td{
+    font-style: italic;
 }
 
 th
 {
+    border-bottom: 2px blue;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     background-color: coral;
-    color: wheat;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 h3{
