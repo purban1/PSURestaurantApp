@@ -17,7 +17,7 @@ public class MealResult {
             bill.put("mealprice", "15.00");
         }
         else if (meal.equals("cheeseburger")){
-            bill.put("meal", "Cheeseburger");
+            bill.put("meal", "");
             bill.put("mealprice", "7.50");
         }
         else if (meal.equals("pizza")){
