@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package restaurant.model;
 
 import javax.persistence.EntityManager;
@@ -11,19 +7,30 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author production
+ * @author Patrick Urban
  */
 public class menuCreator {
-    public menuCreator(){
-        MenuItem mi1 = new MenuItem();
-        MenuItem mi2 = new MenuItem();
-        MenuItem mi3 = new MenuItem();
-        MenuItem mi4 = new MenuItem();
-        MenuItem mi5 = new MenuItem();
-        MenuItem mi6 = new MenuItem();
-        MenuItem mi7 = new MenuItem();
-        MenuItem mi8 = new MenuItem();
-        MenuItem mi9 = new MenuItem();
+
+    private int creationCount = 0;
+
+    public menuCreator() {
+
+        if (this.creationCount==0) {
+            this.populateTheMenu();
+            creationCount++;
+        }
+    }
+
+    private void populateTheMenu() {
+        MenuEntity mi1 = new MenuEntity();
+        MenuEntity mi2 = new MenuEntity();
+        MenuEntity mi3 = new MenuEntity();
+        MenuEntity mi4 = new MenuEntity();
+        MenuEntity mi5 = new MenuEntity();
+        MenuEntity mi6 = new MenuEntity();
+        MenuEntity mi7 = new MenuEntity();
+        MenuEntity mi8 = new MenuEntity();
+        MenuEntity mi9 = new MenuEntity();
         mi1.setItem("Steak");
         mi1.setPrice(15.25f);
         mi2.setItem("Cheeseburger");
@@ -51,19 +58,18 @@ public class menuCreator {
         this.manageTheMenu(mi7);
         this.manageTheMenu(mi8);
         this.manageTheMenu(mi9);
-        
     }
-    
-    private void manageTheMenu(MenuItem mi){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("modelPU");
+
+    private void manageTheMenu(MenuEntity mi) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PSURestaurantAppPU");
         EntityManager em = emf.createEntityManager();
-        
+
         //Persist the menu item
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         em.persist(mi);
         tx.commit();
-        
+
         // Close to release sources
         em.close();
         emf.close();

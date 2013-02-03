@@ -42,7 +42,7 @@
             function validate(){
                 var choice=document.forms["choices"]["mainmeal"].value;
                 var choice2=document.forms["choices"]["beverage"].value;
-                if (choice=="default"){
+                if (choice=="default" || choice2=="default"){
                     alert("You must make a selection from all menus to continue.")
                     return false;
                 }

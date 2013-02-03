@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import restaurant.model.MealResult;
+import restaurant.model.menuCreator;
 
 /**
  *
@@ -17,7 +18,7 @@ import restaurant.model.MealResult;
  */
 @WebServlet(name = "MenuServlet", urlPatterns = {"/choices.do"})
 public class MenuServlet extends HttpServlet {
-
+    private static int runCount = 0;
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -33,6 +34,8 @@ public class MenuServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
+        menuCreator mc = new menuCreator();
+       
         // Set destination location
         final String DESTINATION = "billjsp.jsp";
         
@@ -51,6 +54,7 @@ public class MenuServlet extends HttpServlet {
         view.forward(request, response);
         
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
