@@ -38,21 +38,22 @@
             totalBill = beveragePrice + mealPrice;
             theTax = totalBill * TAX_RATE;
             suggestedTip = totalBill * TIP_RATE;
-
-            out.print("<img src=\"images/cook.gif\" alt=\"Chef\" style=\"float: left\">&nbsp");
-            out.print("<table width=540>");
-            out.print("<th width=50 style=\"background-color: white\"></th><th colspan=\"2\" >Servlet Slophouse Dining Bill</th>");
-            out.print("<tr><td></td><td width=390>Your meal was a " + meal + " at a cost of </td><td align = \"right\">"
+            
+ 
+            out.print("<table width=680>");
+            out.print("<tr><td width=150 rowspan=\"8\"><img src=\"images/cook.gif\" alt=\"Chef\" style=\"align: left\"></td>");
+            out.print("<td width=50 rowspan=\"8\"></td>");
+            out.print("<th colspan=2>Servlet Slophouse Dining Bill</th></tr>");
+            out.print("<tr><td width=390>Your meal was a " + meal + " at a cost of </td><td align = \"right\">"
                     + df.format(mealPrice) + "</td></tr>");
-            out.print("<tr><td></td><td>Your beverage was a " + beverage + " at a cost of </td><td align = \"right\">"
+            out.print("<tr><td>Your beverage was a " + beverage + " at a cost of </td><td align = \"right\">"
                     + df.format(beveragePrice) + "</td></tr>");
-            out.print("<tr><td></td><td>Your total before tax was </td><td align = \"right\">" + df.format(totalBill) + "</td></tr>");
-            out.print("<tr><td></td><td>The tax on the meal was </td><td align = \"right\">" + df.format(theTax) + "</td></tr>");
-            out.print("<tr class=\"tipline\"><td></td><td >The suggest tip is </td><td align = \"right\">" + df.format(suggestedTip) + "</td></tr>");
-            out.print("<tr><td></td><td class=\"lastrow\">The total with tip is....... </td><td class=\"lastrow\">" + df.format(totalBill + theTax + suggestedTip) + "</td></tr>");
+            out.print("<tr><td>Your total before tax was </td><td align = \"right\">" + df.format(totalBill) + "</td></tr>");
+            out.print("<tr><td>The tax on the meal was </td><td align = \"right\">" + df.format(theTax) + "</td></tr>");
+            out.print("<tr class=\"tipline\"><td >The suggest tip is </td><td align = \"right\">" + df.format(suggestedTip) + "</td></tr>");
+            out.print("<tr class=\"lastrow\"><td>The total with tip is....... </td><td class=\"lastrow\">" + df.format(totalBill + theTax + suggestedTip) + "</td></tr>");
             out.print("</table>");
         %>
-        <p><br /></p>
-        <h3 text-align: center\">Please come again...</h3>
+        <h3>Please come again...</h3>
     </body>
 </html>
