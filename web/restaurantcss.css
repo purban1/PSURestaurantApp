@@ -13,6 +13,7 @@ root {
 html
 {
     margin-left: 50px;
+    margin-top: 30px;
 }
 
 table
@@ -38,13 +39,23 @@ tr.tipline td{
 }
 
 
+td.centerTop{
+    border-top: 2px solid black;
+    text-align: center;
+}
+
+td.centerBottom{
+    text-align: center;
+    border-top: 2px solid black;
+}
+
 th
 {
     border-bottom: 2px solid blue;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    background-color: #666600;
-    color: honeydew;
+    background-color: #ffcc33;
+    color: #006699;
     padding-top: 10px;
     padding-bottom: 10px;
     column-span: 2;

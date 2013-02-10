@@ -8,7 +8,7 @@ import java.util.Map;
  * @author Patrick Urban
  */
 public class MealResult {
-    public Map mealSelection(String meal, String beverage){
+    public Map mealSelection(String meal, String beverage, String dessert){
         
         
         Map bill = new HashMap();
@@ -17,7 +17,7 @@ public class MealResult {
             bill.put("mealprice", "15.00");
         }
         else if (meal.equals("cheeseburger")){
-            bill.put("meal", "");
+            bill.put("meal", "Cheeseburger");
             bill.put("mealprice", "7.50");
         }
         else if (meal.equals("pizza")){
@@ -37,6 +37,10 @@ public class MealResult {
             bill.put("beverage", "Milk");
             bill.put("beverageprice", "2.50");
         }
+        else if (beverage.equals("none")){
+            bill.put("beverage", "none");
+            bill.put("beverageprice", "0.00");
+        }
         else if (beverage.equals("soda")){
             bill.put("beverage", "Soda");
             bill.put("beverageprice", "1.75");
@@ -48,6 +52,24 @@ public class MealResult {
         else if (beverage.equals("margarita")){
             bill.put("beverage", "Strawberry Margarita");
             bill.put("beverageprice", "7.75");
+        }
+        
+        
+        if (dessert.equals("pie")){
+            bill.put("dessert", "Blueberry Pie");
+            bill.put("dessertprice", "2.75");
+        }
+        else if (dessert.equals("none")){
+            bill.put("dessert", "none");
+            bill.put("dessertprice", "0.00");
+        }
+        else if (dessert.equals("sundae")){
+            bill.put("dessert", "Hot Fudge Sundae");
+            bill.put("dessertprice", "2.25");
+        }
+        else if (dessert.equals("cake")){
+            bill.put("dessert", "Chocolate Cake");
+            bill.put("dessertprice", "3.25");
         }
         
         

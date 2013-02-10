@@ -41,10 +41,11 @@ public class MenuServlet extends HttpServlet {
         
         String meal = request.getParameter("mainmeal");
         String beverage = request.getParameter("beverage");
+        String dessert = request.getParameter("dessert");
         
         MealResult theMeal = new MealResult();
         
-        Map bill = theMeal.mealSelection(meal, beverage);
+        Map bill = theMeal.mealSelection(meal, beverage, dessert);
         
         request.setAttribute("total", bill);
         
