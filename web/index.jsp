@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     <td class="centerBottom" colspan="3">
-                        <input type="submit" name ="submit" value="Let's Eat">
+                        <input type="submit" name ="submit" value="Let's Eat!!">
                     </td>
                 </tr>
             </table>
