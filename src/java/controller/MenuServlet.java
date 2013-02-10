@@ -34,7 +34,8 @@ public class MenuServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        menuCreator mc = new menuCreator();
+        // For Persistence - commented out no persistence
+        //menuCreator mc = new menuCreator();
        
         // Set destination location
         final String DESTINATION = "billjsp.jsp";
