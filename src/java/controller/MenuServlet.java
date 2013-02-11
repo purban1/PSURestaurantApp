@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import restaurant.model.MealResult;
-import restaurant.model.menuCreator;
+import restaurant.model.MenuEntity;
+import restaurant.model.MenuService;
 
 /**
  *
@@ -35,25 +37,30 @@ public class MenuServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         // For Persistence - commented out no persistence
-        //menuCreator mc = new menuCreator();
-       
+        MenuService mc = new MenuService();
+        
+        List<MenuEntity> itemsList= mc.retreiveMenuItems();
+        
         // Set destination location
-        final String DESTINATION = "billjsp.jsp";
+        //final String DESTINATION = "billjsp.jsp";
+        final String DESTINATION = "testresult.jsp";
         
-        String meal = request.getParameter("mainmeal");
-        String beverage = request.getParameter("beverage");
-        String dessert = request.getParameter("dessert");
+        out.println(itemsList);
         
-        MealResult theMeal = new MealResult();
-        
-        Map bill = theMeal.mealSelection(meal, beverage, dessert);
-        
-        request.setAttribute("total", bill);
-        
-        // Send the updated request object to the billing page
-        RequestDispatcher view =
-                request.getRequestDispatcher(DESTINATION);
-        view.forward(request, response);
+//        String meal = request.getParameter("mainmeal");
+//        String beverage = request.getParameter("beverage");
+//        String dessert = request.getParameter("dessert");
+//        
+//        MealResult theMeal = new MealResult();
+//        
+//        Map bill = theMeal.mealSelection(meal, beverage, dessert);
+//        
+//        request.setAttribute("total", bill);
+//        
+//        // Send the updated request object to the billing page
+//        RequestDispatcher view =
+//                request.getRequestDispatcher(DESTINATION);
+//        view.forward(request, response);
         
     }
     

@@ -18,6 +18,7 @@ public class MenuEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String item;
+    private String itemType;
     private float price;
 
     public Long getId() {
@@ -75,11 +76,23 @@ public class MenuEntity implements Serializable {
         }
         return true;
     }
+   /**
+     * @return the itemType
+     */
+    public String getItemType() {
+        return itemType;
+    }
+
+    /**
+     * @param itemType the itemType to set
+     */
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
+    }
 
     @Override
     public String toString() {
-        return "MenuEntity{" + "id=" + id + ", item=" + item + ", price=" + price + '}';
+        return "MenuEntity{" + "id=" + id + ", item=" + item + ", itemType=" + itemType + ", price=" + price + '}';
     }
-
-
+   
 }
