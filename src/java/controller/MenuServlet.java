@@ -37,30 +37,32 @@ public class MenuServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         // For Persistence - commented out no persistence
-        MenuService mc = new MenuService();
+//        MenuService mc = new MenuService();
+//        
+//        List<MenuEntity> itemsList= mc.retreiveMenuItems();
         
-        List<MenuEntity> itemsList= mc.retreiveMenuItems();
+//        out.println(itemsList);
+        
         
         // Set destination location
-        //final String DESTINATION = "billjsp.jsp";
-        final String DESTINATION = "testresult.jsp";
+        final String DESTINATION = "billjsp.jsp";
+//        final String DESTINATION = "testresult.jsp";
         
-        out.println(itemsList);
         
-//        String meal = request.getParameter("mainmeal");
-//        String beverage = request.getParameter("beverage");
-//        String dessert = request.getParameter("dessert");
-//        
-//        MealResult theMeal = new MealResult();
-//        
-//        Map bill = theMeal.mealSelection(meal, beverage, dessert);
-//        
-//        request.setAttribute("total", bill);
-//        
-//        // Send the updated request object to the billing page
-//        RequestDispatcher view =
-//                request.getRequestDispatcher(DESTINATION);
-//        view.forward(request, response);
+        String meal = request.getParameter("mainmeal");
+        String beverage = request.getParameter("beverage");
+        String dessert = request.getParameter("dessert");
+        
+        MealResult theMeal = new MealResult();
+        
+        Map bill = theMeal.mealSelection(meal, beverage, dessert);
+        
+        request.setAttribute("total", bill);
+        
+        // Send the updated request object to the billing page
+        RequestDispatcher view =
+                request.getRequestDispatcher(DESTINATION);
+        view.forward(request, response);
         
     }
     
